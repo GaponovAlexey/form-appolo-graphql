@@ -42,7 +42,9 @@ export const HomePage = () => {
           page two
         </div>
       </div>
+      <div className={css`padding: 15px;`} >
       {ispage ? <Movies /> : <Directors />}
+      </div>
     </div>
   )
 }
