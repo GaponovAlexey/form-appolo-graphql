@@ -6,6 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { EXCHANGE_RATES } from '../App';
+import { useQuery } from '@apollo/client';
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -20,6 +22,8 @@ const rows = [
 ];
 
 export const Movies = () => {
+  const { loading, error, data } = useQuery(EXCHANGE_RATES)
+  console.log(data);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">

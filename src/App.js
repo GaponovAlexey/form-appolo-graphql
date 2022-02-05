@@ -13,7 +13,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
-const moviesQuery = gql`
+export const EXCHANGE_RATES = gql`
   query moviesquery {
     movies {
       id
@@ -22,7 +22,6 @@ const moviesQuery = gql`
     }
   }
 `
-
 function App() {
   return (
     <ApolloProvider client={client}>
